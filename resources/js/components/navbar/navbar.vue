@@ -1,0 +1,44 @@
+<template>
+    <header class="app-header navbar">
+        <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#">
+            <img class="navbar-brand-full" src="assets/src/img/brand/logo.svg" width="89" height="25" alt="CoreUI Logo">
+            <img class="navbar-brand-minimized" src="assets/src/img/brand/sygnet.svg" width="30" height="30" alt="CoreUI Logo">
+        </a>
+        <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <navbar-left></navbar-left>
+        <navbar-right></navbar-right>
+
+
+        <button class="navbar-toggler aside-menu-toggler d-md-down-none" type="button" data-toggle="aside-menu-lg-show">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <button class="navbar-toggler aside-menu-toggler d-lg-none" type="button" data-toggle="aside-menu-show">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </header>
+
+</template>
+
+<script>
+    export default {
+
+        mounted() {
+            axios.get('host').then(response=>{
+                this.title = response.data.host.title_page;
+                this.links = response.data.links;
+            });
+		},
+		data(){
+			return {
+                    title:'',
+                    links:[]
+			}
+		}
+    }
+</script>
