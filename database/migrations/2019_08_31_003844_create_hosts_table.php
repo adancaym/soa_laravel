@@ -17,6 +17,7 @@ class CreateHostsTable extends Migration
             $table->bigIncrements('id');
             $table->char('host','100');
             $table->char('title_page','100');
+            $table->char('landing_page','100');
             $table->timestamps();
         });
     }

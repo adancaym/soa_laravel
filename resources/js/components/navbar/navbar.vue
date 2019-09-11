@@ -15,6 +15,7 @@
         <navbar-right></navbar-right>
 
 
+
         <button class="navbar-toggler aside-menu-toggler d-md-down-none" type="button" data-toggle="aside-menu-lg-show">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -29,16 +30,10 @@
     export default {
 
         mounted() {
-            axios.get('host').then(response=>{
-                this.title = response.data.host.title_page;
-                this.links = response.data.links;
-            });
+            console.log('navbar_mounted');
 		},
 		data(){
-			return {
-                    title:'',
-                    links:[]
-			}
+			return {}
 		}
     }
 </script>

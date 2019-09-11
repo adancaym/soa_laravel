@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Accounts;
+use App\Hosts;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UsersController extends Controller
 {
@@ -12,10 +15,18 @@ class UsersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
+        $host = session('host');
 
-        return view('users/index');
+        $accounsAcount = $host->accounts->getChildsAccount();
+
+        return response()->json(
+            [
+                'usersAccount' => $accounsAcount
+            ]
+        );
     }
 
     /**
@@ -25,7 +36,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -36,8 +47,15 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = new User();
+        $acount = new Accounts();
+        $user->accounts_id = $acount->createAccountWithParent(Auth::user()->id)->id;
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+        $user->password = bcrypt($request->input('password')) ;
+        return $this->saveModel($user);
     }
+
 
     /**
      * Display the specified resource.
@@ -47,7 +65,9 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        //
+       $user = User::where('id',$id)->first();
+
+       return response()->json(['user'=>$user]);
     }
 
     /**
@@ -70,7 +90,9 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+            $user = User::find($id);
+            return $this->updateModel($user,$request);
+
     }
 
     /**
@@ -82,5 +104,11 @@ class UsersController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function verifyEmail(Request $request){
+        $user = User::where('email', '=', $request->get('email'))->first();
+            return response()->json(['exist'=>$user !== null]);
+
     }
 }

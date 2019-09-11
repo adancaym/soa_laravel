@@ -13,5 +13,9 @@ class Systems extends Model
         return $this->belongsToMany(Hosts::class);
     }
 
+    public function users(){
+        return $this->belongsToMany(User::class);
+    }
+
 
 }

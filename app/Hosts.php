@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Auth;
 
 class Hosts extends Model {
 
@@ -17,6 +18,7 @@ class Hosts extends Model {
 	public function systems(){
 	    return $this->belongsToMany(Systems::class);
     }
+
 
 }
 

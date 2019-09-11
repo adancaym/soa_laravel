@@ -1,6 +1,7 @@
 <?php
 
 use App\Hosts;
+use App\Http\Middleware\Authenticate;
 use App\Http\Middleware\CheckHost;
 use Illuminate\Support\Facades\Auth;
 
@@ -15,25 +16,45 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->middleware(CheckHost::class);
+//borra todo salida de emergecia si fallan las sesiones
+Route::get('/test', function () {
 
+});
+//borra todo salida de emergecia si fallan las sesiones
 Route::get('/exit', function () {
     session()->flush();
     Auth::logout();
-})->middleware(CheckHost::class);
+});
+
+//landing page del host dependiendo del host muestra la pagina de inicio
+Route::get('/', function () {
+    return view('hosts.pages.'.session('host')->landing_page);
+})->middleware([CheckHost::class]);
 
 
 
+//variables de sesion
+Route::get('/host', 'NavbarController@getHost')->middleware([CheckHost::class]);
+Route::get('/links', 'NavbarController@getLinks')->middleware([CheckHost::class]);
+Route::get('/isAdmin', function (){
+    return response()->json(['isAdmin'=>Auth::user()->isAdmin()]);
+})->middleware([CheckHost::class]);
 
-Route::get('/host', 'NavbarController@getHost')->middleware(CheckHost::class);
-
-Route::get('/links', 'NavbarController@getLinks')->middleware(CheckHost::class);
-
-
+//autenticación
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home')->middleware(CheckHost::class);
+//pagina de inicio dentro del sistema
+Route::get('/home', 'HomeController@index')->name('home')->middleware([CheckHost::class]);
 
-Route::resource('hosts', 'HostsController');
+
+
+//indexApis
+Route::get('/users', 'ApiController@apiAdminUsers')->middleware([CheckHost::class]);
+
+
+Route::post('/api/users/verifyEmail', 'UsersController@verifyEmail')->middleware([CheckHost::class]);
+
+//apis
+Route::resource('api/users', 'UsersController')->middleware([CheckHost::class,Authenticate::class]);
+Route::resource('api/hosts', 'HostsController')->middleware([CheckHost::class,Authenticate::class]);
+

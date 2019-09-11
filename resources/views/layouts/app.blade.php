@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,6 +16,7 @@
     <link href="assets/node_modules/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
     <!-- Main styles for this application-->
     <link href="assets/src/css/style.css" rel="stylesheet">
+    <link href="{{asset('css/extra.css')}}" rel="stylesheet">
     <link href="assets/src/vendors/pace-progress/css/pace.min.css" rel="stylesheet">
     <!-- Global site tag (gtag.js) - Google Analytics-->
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>
@@ -25,7 +24,7 @@
     <!-- Styles -->
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ session('host')->title_page }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -44,35 +43,16 @@
     </script>
 </head>
 
-
-<body >
-<div id="app"  class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
+<body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
+<div id="app">
     <nav-bar></nav-bar>
     <div class="app-body">
         <sidebar></sidebar>
         <main class="main">
             <!-- Breadcrumb-->
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item">Home</li>
-                <li class="breadcrumb-item">
-                    <a href="#">Admin</a>
-                </li>
-                <li class="breadcrumb-item active">Dashboard</li>
-                <!-- Breadcrumb Menu-->
-                <li class="breadcrumb-menu d-md-down-none">
-                    <div class="btn-group" role="group" aria-label="Button group">
-                        <a class="btn" href="#">
-                            <i class="icon-speech"></i>
-                        </a>
-                        <a class="btn" href="./">
-                            <i class="icon-graph"></i>  Dashboard</a>
-                        <a class="btn" href="#">
-                            <i class="icon-settings"></i>  Settings</a>
-                    </div>
-                </li>
-            </ol>
-            <div class="container-fluid">
-                <div class="animated fadeIn"></div>
+            <breadcum></breadcum>
+            <div class="container-fluid animated fadeIn">
+                @yield('content')
             </div>
         </main>
         <aside class="aside-menu">
@@ -373,6 +353,7 @@
     </footer>
 </div>
 
+
 <!-- CoreUI and necessary plugins-->
 <script src="assets/node_modules/jquery/dist/jquery.min.js"></script>
 <script src="assets/node_modules/popper.js/dist/umd/popper.min.js"></script>
@@ -380,5 +361,11 @@
 <script src="assets/node_modules/pace-progress/pace.min.js"></script>
 <script src="assets/node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
 <script src="assets/node_modules/@coreui/coreui/dist/js/coreui.min.js"></script>
+<script>
+    $('#ui-view').ajaxLoad();
+    $(document).ajaxComplete(function() {
+        Pace.restart()
+    });
+</script>
 </body>
 </html>

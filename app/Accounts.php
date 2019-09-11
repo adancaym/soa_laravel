@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class Accounts extends Model
 {
@@ -10,7 +11,7 @@ class Accounts extends Model
     protected $table = 'accounts';
     protected $primaryKey= 'id';
 
-    public function user(){
+    public function users(){
         return $this->hasOne(User::class);
     }
 
@@ -38,6 +39,32 @@ class Accounts extends Model
         if ($newAccount->update()){
             return $newAccount;
         }
+    }
+
+    public function getAccountsHost(){
+
+        $host = session('host');
+
+        $host = Hosts::find($host->id);
+
+        $accountsHost = $host->accounts->accounts;
+
+        foreach ($accountsHost as $account){
+            $account->users;
+        }
+        return $accountsHost;
+    }
+
+    public function getChildsAccount(){
+        $user = Auth::user();
+
+        $accountsAccount = $user->accounts->accounts;
+
+        foreach ($accountsAccount as $account){
+            $account->users;
+
+        }
+        return $accountsAccount;
     }
 
 }

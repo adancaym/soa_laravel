@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use App\Accounts;
+use App\User;
 use Closure;
 use App\Hosts;
 class CheckHost
@@ -33,8 +34,19 @@ class CheckHost
             else{
                 $host->host = $hostName;
                 $host->title_page = $hostName;
+                $host->landing_page = 'default';
                 $host->accounts_id = $account->createAccount()->id;
                 $host->save();
+
+                $user = new User();
+
+                $user->id = null;
+                $user->name = $hostName;
+                $user->email = $hostName.'@'.$hostName.'.com';
+                $user->password =  bcrypt($hostName);
+                $user->accounts_id = $host->accounts_id;
+                $user->save();
+
                 $saved = $this->existHost($request,$host);
                 $request->getSession()->put('host', $saved);
             }

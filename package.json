@@ -25,6 +25,7 @@
     },
     "dependencies": {
         "@coreui/coreui": "^2.1.12",
-        "vue-chartjs": "^3.4.2"
+        "vue-chartjs": "^3.4.2",
+        "vue-toasted": "^1.1.27"
     }
 }
