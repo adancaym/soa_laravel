@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
-    <meta name="author" content="Łukasz Holeczek">
+    <meta name="author" content="Å�ukasz Holeczek">
     <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
 
     <!-- Icons-->
-    <link href="assets/node_modules/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
+    <link href="assets/node_modules/@coreui/icons/css/free.min.css" rel="stylesheet">
     <link href="assets/node_modules/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
     <link href="assets/node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="assets/node_modules/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
@@ -83,7 +83,7 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="password" class="col-md-4 col-form-label text-md-left">{{ __('Contraseña') }}</label>
+                                <label for="password" class="col-md-4 col-form-label text-md-left">{{ __('ContraseÃ±a') }}</label>
                                 <div class="col-md-8">
                                     <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
                                     @error('password')
@@ -115,7 +115,7 @@
                                 <div class="col-md-12 text-md-center">
                                     @if (Route::has('password.request'))
                                         <a class="btn btn-link" href="{{ route('password.request') }}">
-                                            {{ __('¿Olvidaste tu contraseña?') }}
+                                            {{ __('Â¿Olvidaste tu contraseÃ±a?') }}
                                         </a>
                                     @endif
                                 </div>
@@ -129,7 +129,7 @@
                 <div class="card text-white bg-primary py-5 d-md-down-none" style="width:44%">
                     <div class="card-body text-center">
                         <div>
-                            <h2>¿Eres nuevo?</h2>
+                            <h2>Â¿Eres nuevo?</h2>
                             <p>Forma parte de esta grandiosa comunidad.</p>
                             <a class="btn btn-primary active mt-3" href="/register">Registrate ahora!</a>
                         </div>

@@ -11,12 +11,12 @@
     },
     "devDependencies": {
         "axios": "^0.18",
-        "bootstrap": "^4.0.0",
+        "bootstrap": "^4.1.3",
         "cross-env": "^5.2.1",
-        "jquery": "^3.2",
+        "jquery": "^3.3.1",
         "laravel-mix": "^4.0.7",
         "lodash": "^4.17.5",
-        "popper.js": "^1.12",
+        "popper.js": "^1.14.4",
         "resolve-url-loader": "2.3.1",
         "sass": "^1.20.1",
         "sass-loader": "7.*",
@@ -25,7 +25,16 @@
     },
     "dependencies": {
         "@coreui/coreui": "^2.1.12",
-        "vue-chartjs": "^3.4.2",
-        "vue-toasted": "^1.1.27"
+        "@coreui/icons": "^0.4.1",
+        "font-awesome": "^4.7.0",
+        "perfect-scrollbar": "^1.4.0",
+        "vue-toasted": "^1.1.27",
+        "@coreui/coreui-plugin-chartjs-custom-tooltips": "1.2.0",
+        "chart.js": "2.7.3",
+        "core-js": "^2.5.7",
+        "flag-icon-css": "^3.2.1",
+        "pace": "0.0.4",
+        "pace-progress": "1.0.2",
+        "simple-line-icons": "2.4.1"
     }
 }

@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
-    <meta name="author" content="Łukasz Holeczek">
+    <meta name="author" content="Å�ukasz Holeczek">
     <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
 
     <!-- Icons-->
-    <link href="assets/node_modules/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
+    <link href="assets/node_modules/@coreui/icons/css/free.min.css" rel="stylesheet">
     <link href="assets/node_modules/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
     <link href="assets/node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="assets/node_modules/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
@@ -86,9 +86,9 @@
                                 <strong>Lucas</strong>
                             </div>
                             <small class="text-muted mr-3">
-                                <i class="icon-calendar"></i>  1 - 3pm</small>
+                                <i class="icon-calendar"></i>Â  1 - 3pm</small>
                             <small class="text-muted">
-                                <i class="icon-location-pin"></i>  Palo Alto, CA</small>
+                                <i class="icon-location-pin"></i>Â  Palo Alto, CA</small>
                         </div>
                         <div class="list-group-item list-group-item-accent-info">
                             <div class="avatar float-right">
@@ -98,9 +98,9 @@
                                 <strong>Megan</strong>
                             </div>
                             <small class="text-muted mr-3">
-                                <i class="icon-calendar"></i>  4 - 5pm</small>
+                                <i class="icon-calendar"></i>Â  4 - 5pm</small>
                             <small class="text-muted">
-                                <i class="icon-social-skype"></i>  On-line</small>
+                                <i class="icon-social-skype"></i>Â  On-line</small>
                         </div>
                         <div class="list-group-item list-group-item-accent-secondary bg-light text-center font-weight-bold text-muted text-uppercase small">Tomorrow</div>
                         <div class="list-group-item list-group-item-accent-danger list-group-item-divider">
@@ -108,16 +108,16 @@
                                 <strong>deadline</strong>
                             </div>
                             <small class="text-muted mr-3">
-                                <i class="icon-calendar"></i>  10 - 11pm</small>
+                                <i class="icon-calendar"></i>Â  10 - 11pm</small>
                             <small class="text-muted">
-                                <i class="icon-home"></i>  creativeLabs HQ</small>
+                                <i class="icon-home"></i>Â  creativeLabs HQ</small>
                             <div class="avatars-stack mt-2">
                                 <div class="avatar avatar-xs">
                                     <img class="img-avatar" src="assets/src/img/avatars/2.jpg" alt="admin@bootstrapmaster.com">
                                 </div>
                                 <div class="avatar avatar-xs">
                                     <img class="img-avatar" src="assets/src/img/avatars/3.jpg" alt="admin@bootstrapmaster.com">
-                                </div>
+                                </div>  
                                 <div class="avatar avatar-xs">
                                     <img class="img-avatar" src="assets/src/img/avatars/4.jpg" alt="admin@bootstrapmaster.com">
                                 </div>
@@ -133,18 +133,18 @@
                             <div>
                                 <strong>#10 Startups.Garden</strong> Meetup</div>
                             <small class="text-muted mr-3">
-                                <i class="icon-calendar"></i>  1 - 3pm</small>
+                                <i class="icon-calendar"></i>Â  1 - 3pm</small>
                             <small class="text-muted">
-                                <i class="icon-location-pin"></i>  Palo Alto, CA</small>
+                                <i class="icon-location-pin"></i>Â  Palo Alto, CA</small>
                         </div>
                         <div class="list-group-item list-group-item-accent-primary list-group-item-divider">
                             <div>
                                 <strong>Team meeting</strong>
                             </div>
                             <small class="text-muted mr-3">
-                                <i class="icon-calendar"></i>  4 - 6pm</small>
+                                <i class="icon-calendar"></i>Â  4 - 6pm</small>
                             <small class="text-muted">
-                                <i class="icon-home"></i>  creativeLabs HQ</small>
+                                <i class="icon-home"></i>Â  creativeLabs HQ</small>
                             <div class="avatars-stack mt-2">
                                 <div class="avatar avatar-xs">
                                     <img class="img-avatar" src="assets/src/img/avatars/2.jpg" alt="admin@bootstrapmaster.com">
