@@ -1,0 +1,29 @@
+{
+	"folders": {},
+	"connections": {
+		"mariaDB-16d3dac3c19-3ea81b72c54d72c": {
+			"provider": "mysql",
+			"driver": "mariaDB",
+			"name": "MariaDB - localhost",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "localhost",
+				"port": "3307",
+				"url": "jdbc:mysql://localhost:3307/",
+				"type": "dev",
+				"handlers": {}
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false
+		}
+	}
+}
