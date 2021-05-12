@@ -30,7 +30,7 @@
         "perfect-scrollbar": "^1.4.0",
         "vue-toasted": "^1.1.27",
         "@coreui/coreui-plugin-chartjs-custom-tooltips": "1.2.0",
-        "chart.js": "2.7.3",
+        "chart.js": "2.9.4",
         "core-js": "^2.5.7",
         "flag-icon-css": "^3.2.1",
         "pace": "0.0.4",
